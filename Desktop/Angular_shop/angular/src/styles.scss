@@ -1,0 +1,39 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    background-color: lightblue !important;
+}
+.home {
+    text-align: center;
+}
+.router-link {
+    margin-top: 10px !important;
+    color: white;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 10px !important;
+    background-color: darkblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    border-radius: 5px;
+    transition-duration: 0.3s;
+    transition-property: color, background-color;
+
+    &:hover {
+        background-color: black;
+        color: lightblue;
+        text-decoration: none;
+    }
+}
+.router-link.buy-now {
+    background-color: darkred;
+}
+.router-link-wrapper {
+    position: absolute;
+    top: 15px;
+    right: 100px;
+}
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';

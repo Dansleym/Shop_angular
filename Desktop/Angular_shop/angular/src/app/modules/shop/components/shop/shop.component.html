@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="router-link-wrapper">
+        <a href="#" class="router-link" routerLink="/">main page</a>
+        <a href="#" class="router-link" routerLink="/cart">cart</a>
+    </div>
+    <div class="products-wrapper">
+        <h2 class="title">Products list</h2>
+
+        <div class="products" *ngFor="let product of products">
+            <div class="products__item">
+                <div class="products__column">
+                    <div class="products__name">{{product.name}}</div>
+                    <div class="products__price">Price: {{product.price}}$</div>
+                    <div class="products__amount">Available: {{product.available}}</div>
+                </div>
+
+                <button class="products__button" [disabled]="product.available === 0" (click)="addToCart(product.id)">
+                    add to cart
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,27 @@
+<div class="router-link-wrapper">
+    <a href="#" class="router-link" routerLink="/">main page</a>
+    <a href="#" class="router-link" routerLink="/shop">shop</a>
+</div>
+<div class="container">
+    <div class="cart-wrapper">
+        <h2 class="title">Cart</h2>
+
+        <div class="cart" *ngFor="let product of cartList">
+            <div class="products__item" *ngIf="product.count > 0">
+                <div class="products__column">
+                    <div class="products__name">{{product.name}}</div>
+                    <div class="products__price">Price: {{product.price }}$</div>
+                    <div class="products__amount">Count: {{product.count}}</div>
+                </div>
+                <div class="count-wrapper">
+                    <button class="plus" (click)="addToCart(product.id)">+</button>
+                    <button class="minus" (click)="removeFromCart(product.id)">-</button>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="total-price">Total price: <span class="cart-products-price">{{totalPrice}}</span>$</h2>
+        <a href="#" class="router-link buy-now" routerLink="/order" *ngIf="totalPrice > 0">Buy now</a>
+    </div>
+</div>
+
